@@ -9,6 +9,14 @@
 </head>
 <body>
 
+<h1>Enroll Page</h1>
+{% if form.errors %}
+         <p style="color: red;">
+             Please correct the error{{ form.errors|pluralize }} below.
+         </p>
+     {% endif %}
+
+
 <form action="/enroll/" method="post">
 
   {%  csrf_token %}
