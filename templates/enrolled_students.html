@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link href="{% static "css/table_success.css" %}" rel="stylesheet" />
+
+</head>
+<body>
+
+<p> You enrolled Student <b>{{ student }}</b> into Course <b>{{ course }}</b>.</p>
+
+<hr>
+
+<p> Displaying <b>Students</b> in <b>{{ course }}</b></p>
+
+<hr>
+
+<table style="width:100%">
+
+<tr>
+  <th>Student ID</th>
+  <th>Name</th>
+</tr>
+
+{% for student in enrolled_students %}
+
+  <tr>
+    <td> {{ student.pk }} </td>
+    <td> {{ student }} </td>
+  </tr>
+
+{%  endfor  %}
+</table>
+
+</body>
+</html>

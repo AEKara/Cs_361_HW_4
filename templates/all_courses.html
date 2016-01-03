@@ -1,0 +1,42 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link href="{% static "css/table_success.css" %}" rel="stylesheet" />
+
+</head>
+<body>
+
+<h1>All Courses Page</h1>
+
+<br>
+
+<table style="width:100%">
+
+<tr>
+  <th>Course ID</th>
+  <th>Course Name</th>
+  <th>Course Code</th>
+  <th>Classroom</th>
+  <th>Times</th>
+  <th>Teacher</th>
+</tr>
+
+{% for course in course_list %}
+
+  <tr>
+    <td> {{ course.pk }} </td>
+    <td> {{ course.name }} </td>
+    <td> {{ course.code }} </td>
+    <td> {{ course.classroom }} </td>
+    <td> {{ course.times }} </td>
+    <td> {{ course.teacher }} </td>
+  </tr>
+
+{%  endfor  %}
+</table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add Teacher</title>
+<link href="{% static "css/rounded_corner.css" %}" rel="stylesheet" />
+
+</head>
+<body>
+<h1>Add Teachers</h1>
+<form action="/add_teacher/" method="post">
+
+{% if form.errors %}
+         <p style="color: red;">
+             Please correct the error{{ form.errors|pluralize }} below.
+         </p>
+     {% endif %}
+
+
+  {%  csrf_token %}
+  <table>
+      {{ form.as_table }}
+  </table>
+
+  <input type="submit" value="Add">
+
+</form>
+
+</body>
+</html>
