@@ -8,27 +8,29 @@
 
 </head>
 <body>
+<h1>Enrolled Page</h1>
 
-<p> You enrolled Student <b>{{ student }}</b> into Course <b>{{ course }}</b>.</p>
+<p> Student <b>{{ student }}</b> enrolled into course <b>{{ course }}</b>.</p>
 
-<hr>
+<br>
 
-<p> Displaying <b>Students</b> in <b>{{ course }}</b></p>
-
-<hr>
 
 <table style="width:100%">
 
 <tr>
   <th>Student ID</th>
   <th>Name</th>
+  <th>Last Name</th>
+  <th>Email</th>
 </tr>
 
 {% for student in enrolled_students %}
 
   <tr>
     <td> {{ student.pk }} </td>
-    <td> {{ student }} </td>
+    <td> {{ student.first_name }} </td>
+    <td> {{ student.last_name }} </td>
+    <td> {{ student.email }} </td>
   </tr>
 
 {%  endfor  %}
